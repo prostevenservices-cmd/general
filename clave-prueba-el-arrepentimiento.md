@@ -12,7 +12,7 @@
 
 1. **C.** Cambiar sinceramente de mente y corazón, abandonar el pecado y volver a Dios.
 2. **B.** El remordimiento puede limitarse a lamentar las consecuencias, mientras que el arrepentimiento conduce a volver a Dios y cambiar de vida.
-3. **A.** La benignidad de Dios.
+3. **C.** La afirmación es incompleta: además del temor al juicio, el estudio presenta la bondad de Dios, la predicación, la fe y la tristeza según Dios como medios o motivaciones que conducen al arrepentimiento.
 4. **B.** Reconocimiento, remordimiento, resolución, reformación y restitución.
 
 ---

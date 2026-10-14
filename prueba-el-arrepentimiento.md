@@ -43,15 +43,15 @@ D. El arrepentimiento consiste únicamente en sentir más tristeza que remordimi
 
 **Respuesta:** __________
 
-### 3. Según Romanos 2:4, ¿qué guía a la persona al arrepentimiento?
+### 3. Un estudiante afirma: «El único motivo bíblico para arrepentirse es el temor al juicio». ¿Cuál evaluación es más correcta?
 
-A. La benignidad de Dios.
+A. Es correcta, porque las Escrituras no presentan ninguna otra motivación.
 
-B. La aprobación de otras personas.
+B. Es incorrecta, porque el arrepentimiento debe surgir únicamente de una emoción intensa.
 
-C. El éxito material.
+C. Es incompleta, porque también pueden conducir al arrepentimiento la bondad de Dios, la predicación, la fe y la tristeza según Dios.
 
-D. El deseo de evitar toda dificultad.
+D. Es incorrecta, porque el juicio no tiene ninguna relación con el arrepentimiento.
 
 **Respuesta:** __________
 
