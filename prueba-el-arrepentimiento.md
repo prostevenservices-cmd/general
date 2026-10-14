@@ -43,15 +43,15 @@ D. El arrepentimiento consiste únicamente en sentir más tristeza que remordimi
 
 **Respuesta:** __________
 
-### 3. Un estudiante afirma: «El único motivo bíblico para arrepentirse es el temor al juicio». ¿Cuál evaluación es más correcta?
+### 3. ¿Cuál opción relaciona correctamente cada texto con el factor que conduce al arrepentimiento?
 
-A. Es correcta, porque las Escrituras no presentan ninguna otra motivación.
+A. Romanos 2:4: el juicio; Mateo 12:41: la tristeza; 2 Corintios 7:10: la predicación; Hechos 17:30-31: la benignidad.
 
-B. Es incorrecta, porque el arrepentimiento debe surgir únicamente de una emoción intensa.
+B. Romanos 2:4: la benignidad; Mateo 12:41: la predicación; 2 Corintios 7:10: la tristeza según Dios; Hechos 17:30-31: el juicio.
 
-C. Es incompleta, porque también pueden conducir al arrepentimiento la bondad de Dios, la predicación, la fe y la tristeza según Dios.
+C. Romanos 2:4: la predicación; Mateo 12:41: el juicio; 2 Corintios 7:10: la benignidad; Hechos 17:30-31: la tristeza según Dios.
 
-D. Es incorrecta, porque el juicio no tiene ninguna relación con el arrepentimiento.
+D. Romanos 2:4: la tristeza según Dios; Mateo 12:41: la benignidad; 2 Corintios 7:10: el juicio; Hechos 17:30-31: la predicación.
 
 **Respuesta:** __________
 
