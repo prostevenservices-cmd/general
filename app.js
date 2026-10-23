@@ -275,6 +275,30 @@ function scheduleSave() {
   saveTimer = window.setTimeout(saveProgress, 250);
 }
 
+function resetQuestionnaire() {
+  window.clearTimeout(saveTimer);
+  localStorage.removeItem(STORAGE_KEY);
+  form.reset();
+  form
+    .querySelectorAll("input, textarea, select")
+    .forEach((control) => control.setCustomValidity(""));
+
+  document.querySelectorAll(".hours-row").forEach((row) => {
+    const openControl = row.querySelector('input[type="checkbox"]');
+    const timeInputs = row.querySelectorAll('input[type="time"]');
+    row.classList.toggle("closed", !openControl.checked);
+    timeInputs.forEach((input) => {
+      input.disabled = !openControl.checked;
+    });
+  });
+
+  currentStep = 1;
+  highestVisitedStep = 1;
+  clearValidationMessage();
+  updateConditionals();
+  saveStatus.classList.remove("visible");
+}
+
 function restoreProgress() {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) return false;
@@ -404,6 +428,7 @@ form.addEventListener("submit", async (event) => {
       throw new Error(result.message || "The questionnaire could not be sent.");
     }
 
+    resetQuestionnaire();
     questionnaire.classList.add("hidden");
     success.classList.remove("hidden");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -421,9 +446,7 @@ form.addEventListener("submit", async (event) => {
 });
 
 document.querySelector("#editButton").addEventListener("click", () => {
-  success.classList.add("hidden");
-  questionnaire.classList.remove("hidden");
-  showStep(TOTAL_STEPS, { keepPosition: true });
+  startQuestionnaire();
 });
 
 buildHours();
