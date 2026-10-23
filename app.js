@@ -329,77 +329,6 @@ function startQuestionnaire() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function formatAnswers() {
-  const data = collectData();
-  const labels = {
-    domain: "Website domain",
-    mainAddress: "Main store address",
-    mainPhone: "Main phone",
-    generalEmail: "General email",
-    emailAccounts: "Corporate email accounts",
-    businessModel: "Business model",
-    salesArea: "Sales areas",
-    websiteAccess: "Website access",
-    wholesaleApplication: "Wholesale application",
-    pricingTiers: "Different pricing tiers",
-    tierCount: "Number of pricing tiers",
-    taxHandling: "Tax handling",
-    certificateTracking: "Resale certificate tracking",
-    paymentMethods: "Payment methods",
-    storeCredit: "Store credit",
-    creditTerms: "Customer credit terms",
-    carriers: "Shipping carriers",
-    shippingRates: "Shipping rates",
-    pickup: "Pickup availability",
-    pickupSameAsMain: "Pickup uses main store information",
-    pickupAddress: "Pickup address",
-    pickupPhone: "Pickup phone",
-    pickupHours: "Pickup hours",
-    invoicePlatform: "Invoice platform",
-    accountingPlatform: "Accounting platform",
-    documents: "Required documents",
-    supportPlan: "Post-launch support",
-    additionalNotes: "Additional notes",
-  };
-
-  const lines = [
-    "AMY DELUXE USA — ONLINE STORE QUESTIONNAIRE",
-    "amydeluxeusa.com",
-    `Completed: ${new Date().toLocaleString("en-US")}`,
-    "",
-  ];
-
-  Object.entries(data).forEach(([key, value]) => {
-    if (key.startsWith("hours_")) return;
-    const displayValue = Array.isArray(value) ? value.join(", ") : value;
-    if (displayValue) lines.push(`${labels[key] || key}: ${displayValue}`);
-  });
-
-  lines.push("", "BUSINESS HOURS");
-  DAYS.forEach((day) => {
-    const isOpen = data[`hours_${day}_open`];
-    const start = data[`hours_${day}_start`];
-    const end = data[`hours_${day}_end`];
-    lines.push(`${day}: ${isOpen ? `${start}–${end}` : "Closed"}`);
-  });
-
-  return lines.join("\n");
-}
-
-function downloadAnswers() {
-  const blob = new Blob([formatAnswers()], {
-    type: "text/plain;charset=utf-8",
-  });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "amy-deluxe-store-questionnaire.txt";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
-}
-
 startButton.addEventListener("click", startQuestionnaire);
 
 nextButton.addEventListener("click", () => {
@@ -475,10 +404,6 @@ form.addEventListener("submit", async (event) => {
     submitButton.innerHTML = originalButtonContent;
   }
 });
-
-document
-  .querySelector("#downloadButton")
-  .addEventListener("click", downloadAnswers);
 
 document.querySelector("#editButton").addEventListener("click", () => {
   success.classList.add("hidden");

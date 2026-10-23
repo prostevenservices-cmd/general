@@ -20,7 +20,6 @@ Open `http://localhost:4173`.
 - Conditional B2B, tax, payment, pickup, and accounting questions
 - Automatic browser-based progress saving
 - Responsive desktop and mobile layouts
-- Downloadable text summary after completion
 - Email delivery to `prostevenservices@gmail.com` through the cPanel mail service
 
 ## cPanel deployment
