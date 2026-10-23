@@ -120,29 +120,16 @@
                   />
                 </div>
 
-                <div class="field-grid">
-                  <div class="field">
-                    <label for="mainPhone">Main phone number</label>
-                    <input
-                      id="mainPhone"
-                      name="mainPhone"
-                      type="tel"
-                      autocomplete="tel"
-                      placeholder="(000) 000-0000"
-                      required
-                    />
-                  </div>
-                  <div class="field">
-                    <label for="generalEmail">General email address</label>
-                    <input
-                      id="generalEmail"
-                      name="generalEmail"
-                      type="email"
-                      autocomplete="email"
-                      placeholder="contact@amydeluxeusa.com"
-                      required
-                    />
-                  </div>
+                <div class="field">
+                  <label for="mainPhone">Main phone number</label>
+                  <input
+                    id="mainPhone"
+                    name="mainPhone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="(000) 000-0000"
+                    required
+                  />
                 </div>
 
                 <fieldset class="field">
@@ -150,6 +137,27 @@
                   <p class="helper">Select each open day and add its hours.</p>
                   <div class="hours-list" id="businessHours"></div>
                 </fieldset>
+
+                <div class="field">
+                  <label for="generalEmailLocal">General email address</label>
+                  <p class="helper email-helper">
+                    Enter only the first part, such as “contact” or “info.”
+                  </p>
+                  <div class="email-input-group">
+                    <input
+                      id="generalEmailLocal"
+                      name="generalEmailLocal"
+                      type="text"
+                      inputmode="email"
+                      autocomplete="off"
+                      placeholder="contact"
+                      pattern="[A-Za-z0-9._%+\-]+"
+                      title="Enter only the part before @amydeluxeusa.com"
+                      required
+                    />
+                    <span>@amydeluxeusa.com</span>
+                  </div>
+                </div>
 
                 <fieldset class="field">
                   <legend>

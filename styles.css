@@ -493,6 +493,36 @@ textarea {
   transform: translateY(-34%);
 }
 
+.email-helper {
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.email-input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.email-input-group input:not([type="radio"], [type="checkbox"]) {
+  min-width: 0;
+  margin-top: 0;
+  border-radius: 11px 0 0 11px;
+}
+
+.email-input-group span {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 11px 11px 0;
+  color: var(--green);
+  background: var(--soft);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .choice-stack,
 .choice-grid {
   display: grid;
@@ -777,6 +807,11 @@ footer {
   .choice-grid,
   .choice-grid.compact {
     grid-template-columns: 1fr;
+  }
+
+  .email-input-group span {
+    padding-inline: 10px;
+    font-size: 12px;
   }
 
   .hours-row {

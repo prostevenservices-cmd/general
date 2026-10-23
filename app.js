@@ -289,7 +289,13 @@ function restoreProgress() {
 
     Object.entries(saved.data || {}).forEach(([name, savedValue]) => {
       const controls = [...form.querySelectorAll(`[name="${CSS.escape(name)}"]`)];
-      if (!controls.length) return;
+      if (!controls.length) {
+        if (name === "generalEmail" && typeof savedValue === "string") {
+          const localEmailControl = form.elements.generalEmailLocal;
+          localEmailControl.value = savedValue.split("@")[0] || "";
+        }
+        return;
+      }
       const values = Array.isArray(savedValue) ? savedValue : [savedValue];
 
       controls.forEach((control) => {

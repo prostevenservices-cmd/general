@@ -36,8 +36,20 @@ if (trim((string) ($_POST['website'] ?? '')) !== '') {
     respond(200, true, 'Questionnaire received.');
 }
 
+$generalEmailLocal = trim((string) ($_POST['generalEmailLocal'] ?? ''));
+if (
+    $generalEmailLocal === ''
+    || preg_match('/^[A-Za-z0-9._%+\-]+$/', $generalEmailLocal) !== 1
+) {
+    respond(
+        422,
+        false,
+        'Please enter only the part before @amydeluxeusa.com.'
+    );
+}
+
 $generalEmail = filter_var(
-    trim((string) ($_POST['generalEmail'] ?? '')),
+    $generalEmailLocal . '@amydeluxeusa.com',
     FILTER_VALIDATE_EMAIL
 );
 
@@ -65,6 +77,8 @@ foreach ($requiredFields as $field) {
 if ($generalEmail === false) {
     respond(422, false, 'Please provide a valid general email address.');
 }
+
+$_POST['generalEmail'] = $generalEmail;
 
 $labels = [
     'domain' => 'Website domain',
