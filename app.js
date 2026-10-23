@@ -158,6 +158,7 @@ function validateCurrentStep() {
 
 function clearValidationMessage() {
   document.querySelector(".invalid-message")?.remove();
+  document.querySelector(".submit-message")?.remove();
 }
 
 function getValue(name) {
@@ -435,13 +436,44 @@ form.addEventListener("change", (event) => {
   scheduleSave();
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!validateCurrentStep()) return;
+
   saveProgress();
-  questionnaire.classList.add("hidden");
-  success.classList.remove("hidden");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  clearValidationMessage();
+  submitButton.disabled = true;
+  const originalButtonContent = submitButton.innerHTML;
+  submitButton.textContent = "Sending…";
+
+  try {
+    const response = await fetch("submit.php", {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "The questionnaire could not be sent.");
+    }
+
+    questionnaire.classList.add("hidden");
+    success.classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } catch (error) {
+    const message = document.createElement("p");
+    message.className = "submit-message";
+    message.textContent =
+      error.message ||
+      "We could not send your answers. Please try again in a moment.";
+    document.querySelector(".form-actions").after(message);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.innerHTML = originalButtonContent;
+  }
 });
 
 document

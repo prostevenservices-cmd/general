@@ -75,6 +75,16 @@
 
           <div class="form-area">
             <form id="storeForm" novalidate>
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
               <section
                 class="form-step active"
                 data-step="1"
@@ -925,8 +935,8 @@
           <div class="eyebrow">Questionnaire complete</div>
           <h1>Thank you, Mr. Loai.</h1>
           <p>
-            Your answers are ready. Download a copy for your records or return to
-            make a change.
+            Your answers were sent successfully. Download a copy for your records
+            or return to make a change.
           </p>
           <div class="success-actions">
             <button class="button button-primary" id="downloadButton" type="button">

@@ -46,6 +46,15 @@ label {
   display: none !important;
 }
 
+.honeypot {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+}
+
 .page-shell {
   width: min(1240px, calc(100% - 40px));
   margin: 0 auto;
@@ -668,6 +677,20 @@ textarea {
   color: var(--danger);
   font-size: 12px;
   font-weight: 600;
+}
+
+.submit-message {
+  margin: 14px 0 0 auto;
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+  transform: none;
 }
 
 .success {

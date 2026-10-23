@@ -5,10 +5,11 @@ store project.
 
 ## Run locally
 
-No build step or dependencies are required:
+No build step or dependencies are required. To test the submission endpoint,
+serve the project with PHP:
 
 ```bash
-python3 -m http.server 4173
+php -S localhost:4173
 ```
 
 Open `http://localhost:4173`.
@@ -20,7 +21,11 @@ Open `http://localhost:4173`.
 - Automatic browser-based progress saving
 - Responsive desktop and mobile layouts
 - Downloadable text summary after completion
+- Email delivery to `prostevenservices@gmail.com` through the cPanel mail service
 
-Questionnaire answers currently remain in the visitor's browser. Connect the
-submit handler in `app.js` to the chosen backend, CRM, or form service before
-production use.
+## cPanel deployment
+
+Upload `index.html`, `styles.css`, `app.js`, and `submit.php` to the same
+directory. Confirm that PHP's `mail()` function works on the account and that
+Email Deliverability shows valid SPF and DKIM records for the hosting domain.
+The server does not retain a copy of submitted answers.
