@@ -344,7 +344,16 @@ nextButton.addEventListener("click", () => {
 
 backButton.addEventListener("click", () => showStep(currentStep - 1));
 
-form.addEventListener("input", () => {
+form.addEventListener("input", (event) => {
+  if (event.target.name === "generalEmailLocal") {
+    const localPartIsValid = /^[A-Za-z0-9._%+-]+$/.test(event.target.value);
+    event.target.setCustomValidity(
+      event.target.value === "" || localPartIsValid
+        ? ""
+        : "Enter only the part before @amydeluxeusa.com.",
+    );
+  }
+
   updateConditionals();
   scheduleSave();
 });
