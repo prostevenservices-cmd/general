@@ -160,7 +160,7 @@ $fromDomain = filter_var($host, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME)
     ? $host
     : 'localhost';
 
-$subject = 'Amy Deluxe USA — New questionnaire response';
+$subject = 'Amy Deluxe USA - New questionnaire response';
 $headers = [
     'From: Amy Deluxe Questionnaire <questionnaire@' . $fromDomain . '>',
     'Reply-To: ' . $generalEmail,
