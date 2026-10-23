@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Amy Deluxe USA online store project questionnaire"
+    />
+    <title>Amy Deluxe USA | Store Questionnaire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Amy Deluxe USA questionnaire home">
+          <span class="brand-mark">AD</span>
+          <span>
+            <strong>AMY DELUXE</strong>
+            <small>USA</small>
+          </span>
+        </a>
+        <div class="save-status" id="saveStatus" aria-live="polite">
+          <span class="save-dot"></span>
+          Progress saved
+        </div>
+      </header>
+
+      <main>
+        <section class="intro" id="intro">
+          <div class="eyebrow">Online store questionnaire</div>
+          <h1>Let’s plan your online store.</h1>
+          <p>
+            Dear Mr. Loai, your answers will help us understand your business,
+            recommend the right features, and prepare an accurate proposal.
+          </p>
+          <div class="intro-meta">
+            <span>About 8 minutes</span>
+            <span>10 short steps</span>
+            <span>Progress saves automatically</span>
+          </div>
+          <button class="button button-primary" id="startButton" type="button">
+            Start questionnaire
+            <span aria-hidden="true">→</span>
+          </button>
+        </section>
+
+        <section class="questionnaire hidden" id="questionnaire">
+          <aside class="sidebar" aria-label="Questionnaire progress">
+            <div class="progress-copy">
+              <span id="progressLabel">Step 1 of 10</span>
+              <strong id="progressPercent">10%</strong>
+            </div>
+            <div
+              class="progress-track"
+              role="progressbar"
+              aria-valuemin="1"
+              aria-valuemax="10"
+              aria-valuenow="1"
+            >
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <nav class="step-nav" id="stepNav"></nav>
+            <div class="sidebar-help">
+              <strong>Need a moment?</strong>
+              <p>You can safely close this page and continue later.</p>
+            </div>
+          </aside>
+
+          <div class="form-area">
+            <form id="storeForm" novalidate>
+              <section
+                class="form-step active"
+                data-step="1"
+                data-title="Business Information"
+              >
+                <div class="step-heading">
+                  <span>Step 1</span>
+                  <h2>Business &amp; Contact Information</h2>
+                  <p>Let’s begin with the main details for your store.</p>
+                </div>
+
+                <div class="field">
+                  <label for="domain">Website domain</label>
+                  <div class="input-with-badge">
+                    <input
+                      id="domain"
+                      name="domain"
+                      value="amydeluxeusa.com"
+                      readonly
+                    />
+                    <span>Confirmed</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="mainAddress">Main store address</label>
+                  <input
+                    id="mainAddress"
+                    name="mainAddress"
+                    autocomplete="street-address"
+                    placeholder="Street, city, state, ZIP code"
+                    required
+                  />
+                </div>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="mainPhone">Main phone number</label>
+                    <input
+                      id="mainPhone"
+                      name="mainPhone"
+                      type="tel"
+                      autocomplete="tel"
+                      placeholder="(000) 000-0000"
+                      required
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="generalEmail">General email address</label>
+                    <input
+                      id="generalEmail"
+                      name="generalEmail"
+                      type="email"
+                      autocomplete="email"
+                      placeholder="contact@amydeluxeusa.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <fieldset class="field">
+                  <legend>Business days and hours</legend>
+                  <p class="helper">Select each open day and add its hours.</p>
+                  <div class="hours-list" id="businessHours"></div>
+                </fieldset>
+
+                <fieldset class="field">
+                  <legend>
+                    How many corporate email accounts would you like to start
+                    with?
+                  </legend>
+                  <div class="choice-grid compact">
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="emailAccounts"
+                        value="1–3 accounts"
+                        required
+                      />
+                      <span><strong>1–3</strong> accounts</span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="emailAccounts"
+                        value="4–10 accounts"
+                      />
+                      <span><strong>4–10</strong> accounts</span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="emailAccounts"
+                        value="11–25 accounts"
+                      />
+                      <span><strong>11–25</strong> accounts</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="2"
+                data-title="Business Model"
+              >
+                <div class="step-heading">
+                  <span>Step 2</span>
+                  <h2>Business Model</h2>
+                  <p>Tell us who will shop on the website and where you sell.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>Who will purchase products through the website?</legend>
+                  <p class="helper">Select one.</p>
+                  <div class="choice-stack">
+                    <label class="choice-card">
+                      <input type="radio" name="businessModel" value="B2C" required />
+                      <span>
+                        <strong>Retail customers only</strong>
+                        <small>B2C</small>
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="businessModel" value="B2B" />
+                      <span>
+                        <strong>Wholesale customers only</strong>
+                        <small>B2B</small>
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="businessModel" value="B2C and B2B" />
+                      <span>
+                        <strong>Retail and wholesale customers</strong>
+                        <small>B2C and B2B</small>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field">
+                  <legend>Where do you plan to sell?</legend>
+                  <p class="helper">Select all that apply.</p>
+                  <div class="choice-grid">
+                    <label class="choice-card check">
+                      <input type="checkbox" name="salesArea" value="Same state" />
+                      <span>Within the same state</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="salesArea" value="Nationwide" />
+                      <span>Nationwide</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="salesArea" value="Selected states" />
+                      <span>Selected states only</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="salesArea" value="Internationally" />
+                      <span>Internationally</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="3"
+                data-title="Website Access"
+              >
+                <div class="step-heading">
+                  <span>Step 3</span>
+                  <h2>Website Access &amp; Product Visibility</h2>
+                  <p>Choose what visitors can see before they are approved.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>Who should be able to access the website?</legend>
+                  <div class="choice-stack">
+                    <label class="choice-card" data-option="public-access">
+                      <input
+                        type="radio"
+                        name="websiteAccess"
+                        value="Public"
+                        required
+                      />
+                      <span>
+                        <strong>Public website</strong>
+                        <small>Anyone can browse the catalog and view prices.</small>
+                        <em class="disabled-reason"></em>
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="websiteAccess" value="Private" />
+                      <span>
+                        <strong>Private website</strong>
+                        <small
+                          >Customers must log in to view products and prices.</small
+                        >
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="websiteAccess" value="Hybrid" />
+                      <span>
+                        <strong>Hybrid website</strong>
+                        <small
+                          >Some categories are visible without prices; restricted
+                          categories require an approved account.</small
+                        >
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="4"
+                data-title="Wholesale Application"
+              >
+                <div class="step-heading">
+                  <span>Step 4</span>
+                  <h2>Wholesale Application</h2>
+                  <p>Choose how new wholesale customers should be approved.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>Will customers need to submit an application?</legend>
+                  <div class="choice-stack detailed">
+                    <label class="choice-card" data-option="no-application">
+                      <input
+                        type="radio"
+                        name="wholesaleApplication"
+                        value="No application"
+                        required
+                      />
+                      <span>
+                        <strong>No application</strong>
+                        <small
+                          >Customers purchase directly and create their own
+                          accounts.</small
+                        >
+                        <em class="disabled-reason"></em>
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="wholesaleApplication"
+                        value="Standard application"
+                      />
+                      <span>
+                        <strong>Standard application</strong>
+                        <small
+                          >Collect business details, EIN, resale certificate, and
+                          business license for team approval.</small
+                        >
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="wholesaleApplication"
+                        value="Advanced application"
+                      />
+                      <span>
+                        <strong>Advanced application &amp; follow-up</strong>
+                        <small
+                          >Adds saved applications, reminders, internal tracking,
+                          identity checks, secure documents, and approval
+                          workflows.</small
+                        >
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="5"
+                data-title="Pricing"
+              >
+                <div class="step-heading">
+                  <span>Step 5</span>
+                  <h2>Customer Groups &amp; Pricing</h2>
+                  <p>Let us know whether different customers receive different prices.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>Will you offer different pricing tiers?</legend>
+                  <div class="choice-stack">
+                    <label class="choice-card">
+                      <input type="radio" name="pricingTiers" value="No" required />
+                      <span>
+                        <strong>No</strong>
+                        <small>All customers will receive the same prices.</small>
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="pricingTiers" value="Yes" />
+                      <span>
+                        <strong>Yes</strong>
+                        <small>Prices will vary by customer group.</small>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field conditional hidden" id="tierCountGroup">
+                  <legend>How many pricing tiers will you need?</legend>
+                  <div class="choice-grid compact">
+                    <label class="choice-card">
+                      <input type="radio" name="tierCount" value="2" />
+                      <span>2 tiers</span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="tierCount" value="3" />
+                      <span>3 tiers</span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="tierCount" value="4" />
+                      <span>4 tiers</span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="tierCount" value="5+" />
+                      <span>5 or more</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="6"
+                data-title="Taxes"
+              >
+                <div class="step-heading">
+                  <span>Step 6</span>
+                  <h2>Taxes &amp; Resale Certificates</h2>
+                  <p>Choose how the store should handle taxable and exempt orders.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>How should taxes be handled?</legend>
+                  <div class="choice-stack">
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="taxHandling"
+                        value="Tax all eligible sales"
+                        required
+                      />
+                      <span>Apply applicable sales tax to all eligible orders.</span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="taxHandling"
+                        value="Tax-exempt wholesale"
+                      />
+                      <span
+                        >Allow approved wholesale customers to purchase tax-exempt
+                        with a valid resale certificate.</span
+                      >
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field">
+                  <legend>Should the platform track resale certificates?</legend>
+                  <div class="choice-stack">
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="certificateTracking"
+                        value="Track dates and expiration"
+                        required
+                      />
+                      <span>Yes, including issue and expiration dates.</span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="certificateTracking"
+                        value="Track without expiration"
+                      />
+                      <span>Yes, without expiration tracking.</span>
+                    </label>
+                    <label class="choice-card" data-option="no-certificate-tracking">
+                      <input
+                        type="radio"
+                        name="certificateTracking"
+                        value="No tracking"
+                      />
+                      <span>
+                        No
+                        <em class="disabled-reason"></em>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="7"
+                data-title="Payments"
+              >
+                <div class="step-heading">
+                  <span>Step 7</span>
+                  <h2>Payment Methods</h2>
+                  <p>Select every payment option you would like to offer.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>Which payment methods would you like to accept?</legend>
+                  <p class="helper">Select all that apply.</p>
+                  <div class="choice-grid">
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="paymentMethods"
+                        value="Authorize.Net"
+                      />
+                      <span>Credit and debit cards via Authorize.Net</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="paymentMethods" value="ACH" />
+                      <span>ACH or bank transfer</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="paymentMethods" value="Zelle" />
+                      <span>Zelle</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="paymentMethods"
+                        value="Store credit"
+                      />
+                      <span>Store credit</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="paymentMethods"
+                        value="Payment upon pickup"
+                      />
+                      <span>Payment upon pickup</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="paymentMethods"
+                        value="Customer credit terms"
+                      />
+                      <span>Customer credit terms (Net 15 or Net 30)</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field conditional hidden" id="storeCreditGroup">
+                  <legend>Will customers receive store credit?</legend>
+                  <div class="choice-stack">
+                    <label class="choice-card">
+                      <input type="radio" name="storeCredit" value="No" />
+                      <span>No</span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="storeCredit"
+                        value="Issued manually"
+                      />
+                      <span>Yes, issued manually by an administrator.</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field conditional hidden" id="creditTermsGroup">
+                  <legend>Which customer credit terms will you offer?</legend>
+                  <div class="choice-grid compact">
+                    <label class="choice-card check">
+                      <input type="checkbox" name="creditTerms" value="Net 15" />
+                      <span>Net 15</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="creditTerms" value="Net 30" />
+                      <span>Net 30</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="creditTerms" value="Other" />
+                      <span>Other</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="8"
+                data-title="Shipping"
+              >
+                <div class="step-heading">
+                  <span>Step 8</span>
+                  <h2>Shipping &amp; Pickup</h2>
+                  <p>Tell us how customers will receive their orders.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>Do you have a business account with a carrier?</legend>
+                  <p class="helper">Select all that apply.</p>
+                  <div class="choice-grid compact">
+                    <label class="choice-card check">
+                      <input type="checkbox" name="carriers" value="UPS" />
+                      <span>UPS</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="carriers" value="FedEx" />
+                      <span>FedEx</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="carriers" value="USPS" />
+                      <span>USPS</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="carriers" value="DHL" />
+                      <span>DHL</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="carriers" value="None yet" />
+                      <span>No carrier account yet</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="carriers" value="Other" />
+                      <span>Other</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field">
+                  <legend>How should shipping costs be calculated?</legend>
+                  <p class="helper">Select all that apply.</p>
+                  <div class="choice-grid">
+                    <label class="choice-card check">
+                      <input type="checkbox" name="shippingRates" value="Live rates" />
+                      <span>Live carrier rates</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="shippingRates"
+                        value="Fixed in-state"
+                      />
+                      <span>Fixed rate within the state</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="shippingRates"
+                        value="Fixed out-of-state"
+                      />
+                      <span>Fixed rate outside the state</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="shippingRates"
+                        value="Free above minimum"
+                      />
+                      <span>Free shipping above a minimum order</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field">
+                  <legend>Will in-store or warehouse pickup be available?</legend>
+                  <div class="choice-stack">
+                    <label class="choice-card">
+                      <input type="radio" name="pickup" value="No" required />
+                      <span>No</span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="pickup" value="One location" />
+                      <span>Yes, from one location</span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="pickup" value="Multiple locations" />
+                      <span>Yes, from multiple locations</span>
+                    </label>
+                    <label class="choice-card">
+                      <input type="radio" name="pickup" value="Wholesale only" />
+                      <span>Yes, but only for approved wholesale customers</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="conditional hidden" id="pickupDetails">
+                  <fieldset class="field">
+                    <legend>
+                      Will pickup use the main store address and business hours?
+                    </legend>
+                    <div class="choice-stack">
+                      <label class="choice-card">
+                        <input type="radio" name="pickupSameAsMain" value="Yes" />
+                        <span>Yes, use the main store information.</span>
+                      </label>
+                      <label class="choice-card">
+                        <input type="radio" name="pickupSameAsMain" value="No" />
+                        <span>No, the pickup information is different.</span>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <div class="conditional hidden panel" id="customPickupDetails">
+                    <div class="field">
+                      <label for="pickupAddress">Pickup address</label>
+                      <input
+                        id="pickupAddress"
+                        name="pickupAddress"
+                        placeholder="Street, city, state, ZIP code"
+                      />
+                    </div>
+                    <div class="field">
+                      <label for="pickupPhone">Pickup phone number</label>
+                      <input
+                        id="pickupPhone"
+                        name="pickupPhone"
+                        type="tel"
+                        placeholder="(000) 000-0000"
+                      />
+                    </div>
+                    <div class="field">
+                      <label for="pickupHours">Pickup days and hours</label>
+                      <textarea
+                        id="pickupHours"
+                        name="pickupHours"
+                        rows="3"
+                        placeholder="Example: Monday–Friday, 9:00 AM–5:00 PM"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="9"
+                data-title="Invoices"
+              >
+                <div class="step-heading">
+                  <span>Step 9</span>
+                  <h2>Invoices &amp; Accounting</h2>
+                  <p>Choose where invoices should be created and what you need.</p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>How would you like to create invoices?</legend>
+                  <div class="choice-stack">
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="invoicePlatform"
+                        value="E-commerce platform"
+                        required
+                      />
+                      <span>Directly through the e-commerce platform.</span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="invoicePlatform"
+                        value="Accounting platform"
+                      />
+                      <span>Through another accounting platform.</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="field conditional hidden" id="accountingPlatformGroup">
+                  <label for="accountingPlatform"
+                    >Which accounting platform do you use?</label
+                  >
+                  <input
+                    id="accountingPlatform"
+                    name="accountingPlatform"
+                    placeholder="Example: QuickBooks"
+                  />
+                </div>
+
+                <fieldset class="field">
+                  <legend>Which documents do you need?</legend>
+                  <p class="helper">Select all that apply.</p>
+                  <div class="choice-grid">
+                    <label class="choice-card check">
+                      <input type="checkbox" name="documents" value="PDF invoices" />
+                      <span>PDF invoices</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="documents" value="Packing slips" />
+                      <span>Packing slips</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="documents" value="Purchase orders" />
+                      <span>Purchase orders</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="documents" value="Credit notes" />
+                      <span>Credit notes</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="documents" value="Refund receipts" />
+                      <span>Refund receipts</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input type="checkbox" name="documents" value="Account statements" />
+                      <span>Account statements</span>
+                    </label>
+                    <label class="choice-card check">
+                      <input
+                        type="checkbox"
+                        name="documents"
+                        value="Customer balance reports"
+                      />
+                      <span>Customer balance reports</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+
+              <section
+                class="form-step"
+                data-step="10"
+                data-title="Support"
+              >
+                <div class="step-heading">
+                  <span>Step 10</span>
+                  <h2>Post-Launch Support</h2>
+                  <p>
+                    Your project includes one complimentary month of technical
+                    support after launch.
+                  </p>
+                </div>
+
+                <fieldset class="field">
+                  <legend>What would you prefer after the complimentary period?</legend>
+                  <div class="choice-stack detailed">
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="supportPlan"
+                        value="No ongoing support"
+                        required
+                      />
+                      <span>
+                        <strong>No ongoing support</strong>
+                        <small>I will manage the website myself.</small>
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="supportPlan"
+                        value="On-demand support"
+                      />
+                      <span>
+                        <strong>On-demand support</strong>
+                        <small>I will request and pay for help when needed.</small>
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="supportPlan"
+                        value="Monthly technical support"
+                      />
+                      <span>
+                        <strong>Monthly technical support</strong>
+                        <small
+                          >Backups, security, updates, monitoring, and
+                          reporting.</small
+                        >
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="supportPlan"
+                        value="Website management support"
+                      />
+                      <span>
+                        <strong>Website management support</strong>
+                        <small
+                          >Maintenance, product uploads, banners, content,
+                          improvements, and customer-related technical
+                          assistance.</small
+                        >
+                      </span>
+                    </label>
+                    <label class="choice-card">
+                      <input
+                        type="radio"
+                        name="supportPlan"
+                        value="Recommend a plan"
+                      />
+                      <span>
+                        <strong>I’m not sure</strong>
+                        <small>Please recommend a plan for me.</small>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="field">
+                  <label for="additionalNotes"
+                    >Anything else we should know?
+                    <span class="optional">Optional</span></label
+                  >
+                  <textarea
+                    id="additionalNotes"
+                    name="additionalNotes"
+                    rows="5"
+                    placeholder="Share any additional requirements or questions."
+                  ></textarea>
+                </div>
+              </section>
+
+              <div class="form-actions">
+                <button class="button button-secondary hidden" id="backButton" type="button">
+                  <span aria-hidden="true">←</span>
+                  Back
+                </button>
+                <button class="button button-primary" id="nextButton" type="button">
+                  Continue
+                  <span aria-hidden="true">→</span>
+                </button>
+                <button class="button button-primary hidden" id="submitButton" type="submit">
+                  Submit questionnaire
+                  <span aria-hidden="true">✓</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="success hidden" id="success" aria-live="polite">
+          <div class="success-icon">✓</div>
+          <div class="eyebrow">Questionnaire complete</div>
+          <h1>Thank you, Mr. Loai.</h1>
+          <p>
+            Your answers are ready. Download a copy for your records or return to
+            make a change.
+          </p>
+          <div class="success-actions">
+            <button class="button button-primary" id="downloadButton" type="button">
+              Download answers
+            </button>
+            <button class="button button-secondary" id="editButton" type="button">
+              Review answers
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>Prepared for Amy Deluxe USA</span>
+        <span>amydeluxeusa.com</span>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
